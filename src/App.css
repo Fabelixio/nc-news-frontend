@@ -8,6 +8,8 @@
 
 .article-card-header {
     color: #001858;
+    font-family: 'Young Serif', serif;
+    text-decoration: underline;
 }
 
 li {
@@ -17,3 +19,13 @@ body {
     background-color: #fef6e4;
 }
 
+.title {
+    color: #001858;
+    text-decoration: underline;
+    font-family: 'Young Serif', serif;
+}
+
+.article-card-contents {
+    color: #172c66;
+    font-family: 'Roboto Serif', serif;
+}
