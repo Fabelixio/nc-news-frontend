@@ -1,0 +1,19 @@
+.articlecard {
+    border: solid 1px black;
+    margin: 10px;
+    background-color: #f3d2c1;
+    border-radius: 20px;
+
+}
+
+.article-card-header {
+    color: #001858;
+}
+
+li {
+    list-style-type: none;
+}
+body {
+    background-color: #fef6e4;
+}
+
