@@ -1,4 +1,5 @@
-
+import { useState, useEffect } from "react"
+import ArticleCard from "./cards/ArticleCard"
 
 
 const ArticleList = () => {
@@ -14,7 +15,7 @@ const ArticleList = () => {
     return (
         <>
         {articles.map((article) => {
-            return <ArticleCard key={} article={article} />
+            return <ArticleCard key={article.article_id} article={article} />
         })}
         </>
     )
