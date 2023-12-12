@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom'
 
 const ArticleCard = ({article}) => {
     return (
@@ -9,7 +9,9 @@ const ArticleCard = ({article}) => {
                 <img src={article.article_img_url} alt='article cover image' />
                 <p className="article-card-contents"> Date Posted: {article.created_at}</p>
                 <p className="article-card-contents">Comments: {article.comment_count}</p>
+                <Link to={`/articles/${article.article_id}`}>
                 <button className="article-button">Go to Article</button>
+                </Link>
             </div>
         </li>
     )

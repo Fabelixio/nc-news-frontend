@@ -5,13 +5,22 @@ import { getAllArticles } from "../utils/api"
 
 const ArticleList = () => {
     const [articles, setArticles] = useState([])
+    const [isError, setIsError] = useState(false)
+    const [isLoading, setIsLoading] = useState([true])
 
     useEffect(() => {
         getAllArticles()
         .then((articleArr) => {
             setArticles(articleArr)
+            setIsLoading(false)
+        })
+        .catch(() => {
+            setIsLoading(false)
+            setIsError(true)
         })
     }, [])
+    if(isLoading) return <h2 className="load-bar">Loading...</h2>
+    if(isError) return <h2 className="error">Error: Something went wrong</h2>
 
     return (
         <section>
