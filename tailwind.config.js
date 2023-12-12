@@ -4,6 +4,7 @@ export default {
   theme: {
     colors: {
       'hue-light': '#001858',
+      'hue-card-bg': '#f3d2c1',
     },
     fontFamily: {
       'young': ['"Young Serif"']

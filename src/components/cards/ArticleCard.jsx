@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const ArticleCard = ({article}) => {
     return (
         <li>
-            <div className="p-2.5 border border-solid border-black m-2.5 rounded gap-0 text-center border-y">
+            <div className="p-2.5 border border-solid border-black m-2.5 rounded gap-0 text-center border-y bg-hue-card-bg">
                 <h2 className="font-young underline text-hue-light">{article.title}</h2>
                 <p className="article-card-contents">{article.author}</p>
                 <img src={article.article_img_url} alt='article cover image' />
