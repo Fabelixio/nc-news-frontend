@@ -2,15 +2,15 @@ import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (
-        <nav className="navbar">
+        <nav className="text-center">
             <Link to='/'>
-            <button>Home</button>
+            <button className='m-3 underline'>Home</button>
             </Link>
             <Link to='/articles'>
-            <button>Articles</button>
+            <button className='m-3 underline'>Articles</button>
             </Link>
             <Link to='/topics'>
-            <button>Topics</button>
+            <button className='m-3 underline'>Topics</button>
             </Link>
         </nav>
     )
