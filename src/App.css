@@ -1,0 +1,36 @@
+.articlecard {
+    border: solid 1px black;
+    margin: 10px;
+    background-color: #f3d2c1;
+    border-radius: 20px;
+
+}
+
+.article-card-header {
+    color: #001858;
+    font-family: 'Young Serif', serif;
+    text-decoration: underline;
+}
+
+li {
+    list-style-type: none;
+}
+body {
+    background-color: #fef6e4;
+}
+
+.title {
+    color: #001858;
+    text-decoration: underline;
+    font-family: 'Young Serif', serif;
+}
+
+.article-card-contents {
+    color: #172c66;
+    font-family: 'Roboto Serif', serif;
+}
+
+.load-bar {
+    color: #001858;
+    font-family: 'Young Serif', serif;
+}
