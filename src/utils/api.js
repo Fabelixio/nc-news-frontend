@@ -31,9 +31,10 @@ export const updateArticleVotes = (articleId, vote) => {
 
 export const postComment = (articleId, comment) => {
     const body = {
+        username: 'icellusedkars',
         body: comment,
-        username: 'guest' 
     }
+    console.log(body)
     //hardcoded, needs to use context// 400 bad request, comment not sending - problaly local not db issue
     return api.post(`/articles/${articleId}/comments`, body)
     .then(({ data }) => {

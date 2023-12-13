@@ -61,7 +61,9 @@ const CommentList = ({ articleId }) => {
                 <textarea
                 id="commentText"
                 onChange={(event) => setNewComment(event.target.value)}
+                multiline='true'
                 required
+                placeholder='Enter comment'
                 value={newComment}>
                 </textarea>
                 <button className="border m-1">Post Comment</button>
