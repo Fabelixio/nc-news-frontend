@@ -22,7 +22,7 @@ const CommentList = ({ articleId }) => {
             setIsLoading(false)
         })
     }, [])
-    if(isLoading) return <h2 className="font-young text-center">Loading...</h2>
+    if(isLoading) return <h2 className="font-young text-center">Loading Comments...</h2>
     if(isError) return <h2 className="font-young text-center">Error: Something went wrong</h2>
     if(!commentsExist) return <h2 className="font-young text-center m-5">This comment section is empty, why not be the first?</h2>
 

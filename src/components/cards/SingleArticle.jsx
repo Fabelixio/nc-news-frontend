@@ -1,5 +1,5 @@
 
-const SingleArticle = ({ article }) => {
+const SingleArticle = ({ article, votes, voteError }) => {
     const date = new Date(article.created_at)
     return (
         <div className="grid grid-cols-3 grid-rows-6 m-2.5 border border-solid border-black p-2 max-h-fit rounded-lg bg-hue-card-bg">
@@ -16,9 +16,8 @@ const SingleArticle = ({ article }) => {
                 <p>Posted by {article.author} <br/>On {date.toDateString()}</p>
             </div>
             <div className="row-start-6">
-                <p>Votes: {article.votes}</p>
-                <button className="border m-1">Upvote</button><br/>
-                <button className="border m-1">Downvote</button>
+                <p>Votes: {votes}</p>
+                {voteError ? <p>Something went wrong, please try again later</p> : <p></p>}
             </div>
         </div>
     )
