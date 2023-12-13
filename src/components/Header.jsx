@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <div>
             <h1 className="font-young underline text-center text-5xl text-hue-light">NC News</h1>
-            <img src={user.avatar} alt={user.username} />
+            <img className="w-10 h-10" src={user.avatar} alt={user.username} />
         </div>
     )
 }

@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react"
-import { useParams } from 'react-router-dom'
 import { getSingleArticle } from '../utils/api'
 import SingleArticle from "./cards/SingleArticle"
 
 
-const ArticlePage = () => {
+const ArticlePage = ({ articleId }) => {
     const [article, setArticle] = useState()
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
-    let { articleId } = useParams()
 
     useEffect(() => {
         getSingleArticle(articleId)
