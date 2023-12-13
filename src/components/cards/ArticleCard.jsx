@@ -11,6 +11,7 @@ const ArticleCard = ({article}) => {
                 </Link>
                 <p className="article-card-contents"> Date Posted: {article.created_at}</p>
                 <p className="article-card-contents">Comments: {article.comment_count}</p>
+                <p>Votes: {article.votes}</p>
                 <Link to={`/articles/${article.article_id}`}>
                 <button >Go to Article</button>
                 </Link>
