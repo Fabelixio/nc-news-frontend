@@ -17,8 +17,8 @@ const SingleArticle = ({ article }) => {
             </div>
             <div className="row-start-6">
                 <p>Votes: {article.votes}</p>
-                <button>Upvote</button><br/>
-                <button>Downvote</button>
+                <button className="border m-1">Upvote</button><br/>
+                <button className="border m-1">Downvote</button>
             </div>
         </div>
     )
