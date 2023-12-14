@@ -59,7 +59,7 @@ const CommentList = ({ articleId }) => {
         <section>
             <h2 className="underline font-young">Comments</h2>
             <h2>{postUpdate}</h2>
-            <form onSubmit={submitComment}>
+            <form onSubmit={submitComment} className="border rounded-md">
                 <label htmlFor="commentText">Comment text:</label>
                 <textarea
                 id="commentText"
