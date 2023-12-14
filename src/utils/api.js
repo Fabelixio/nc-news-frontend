@@ -54,3 +54,10 @@ export const getAllTopics = () => {
         return data.topics
     })
 }
+
+export const deleteComment = (commentId) => {
+    return api.delete(`/comments/${commentId}`)
+    .then((res) => {
+        return res
+    })
+}
