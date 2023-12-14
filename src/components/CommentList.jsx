@@ -74,7 +74,7 @@ const CommentList = ({ articleId }) => {
       hover:-translate-y-0.5 active:translate-y-0
       bg-transparent dark:bg-transparent hover:bg-teal-600 border-2 border-teal-300
       hover:border-teal-600 dark:border-teal-600 dark:hover:border-teal-600 text-teal-600 hover:text-white dark:text-teal-600 dark:hover:bg-teal-600 dark:hover:text-white mx-1 md:mx-2 my-1 md:my-2">Post Comment</button>
-                <p>{commentErr ? <p>Failed to post comment, please try again later...</p> : <p></p>}</p>
+                <div>{commentErr ? <p>Failed to post comment, please try again later...</p> : <p></p>}</div>
             </form>
             <ul>
                 {comments.map((comment) => {

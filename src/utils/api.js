@@ -47,3 +47,10 @@ export const getAllUsers = () => {
        return data.users
     })
 }
+
+export const deleteComment = (commentId) => {
+    return api.delete(`/comments/${commentId}`)
+    .then((res) => {
+        return res
+    })
+}
