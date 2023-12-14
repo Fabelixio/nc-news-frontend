@@ -47,3 +47,10 @@ export const getAllUsers = () => {
        return data.users
     })
 }
+
+export const getAllTopics = () => {
+    return api.get('/topics')
+    .then(({ data }) => {
+        return data.topics
+    })
+}

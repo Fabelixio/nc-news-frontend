@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
-import ArticleCard from "./cards/ArticleCard"
-import { getAllArticles } from "../utils/api"
+import ArticleCard from "../cards/ArticleCard"
+import { getAllArticles } from "../../utils/api"
 
 
 const ArticleList = () => {
