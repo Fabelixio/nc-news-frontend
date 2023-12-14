@@ -42,8 +42,16 @@ const ArticlePage = ({ articleId }) => {
     return (
         <section>
             <SingleArticle article={article} key={article.article_id} votes={votes} voteError={voteError}/>
-            <button onClick={() => voteArticle(1)} className="border m-1">Upvote</button><br/>
-            <button onClick={() => voteArticle(-1)} className="border m-1">Downvote</button>
+            <button onClick={() => voteArticle(1)} className="rounded-xl py-2 px-4 md:py-3 md:px-6 text-xs md:text-sm duration-200 font-medium
+  text-blue-600 hover:-translate-y-0.5 active:translate-y-0 bg-transparent dark:bg-transparent
+  hover:bg-blue-600 border-2 border-blue-300 hover:border-blue-600 dark:border-blue-600
+  dark:hover:border-blue-600 text-blue-600 hover:text-white dark:text-blue-600
+  dark:hover:bg-blue-600 dark:hover:text-white m-2.5">Upvote</button><br/>
+            <button onClick={() => voteArticle(-1)} className="rounded-xl py-2 px-4 md:py-3 md:px-6 text-xs md:text-sm duration-200 font-medium
+  text-blue-600 hover:-translate-y-0.5 active:translate-y-0 bg-transparent dark:bg-transparent
+  hover:bg-blue-600 border-2 border-blue-300 hover:border-blue-600 dark:border-blue-600
+  dark:hover:border-blue-600 text-blue-600 hover:text-white dark:text-blue-600
+  dark:hover:bg-blue-600 dark:hover:text-white m-2.5">Downvote</button>
         </section>
     )
 }

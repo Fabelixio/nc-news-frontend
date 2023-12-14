@@ -28,3 +28,22 @@ export const getArticleComments = (articleId) => {
 export const updateArticleVotes = (articleId, vote) => {
     return api.patch(`articles/${articleId}`, {inc_votes: vote})
 }
+
+export const postComment = (articleId, comment, user) => {
+    const body = {
+        username: user,
+        body: comment,
+    }
+    return api.post(`/articles/${articleId}/comments`, body)
+    .then(({ data }) => {
+        console.log(data)
+        return data.comment
+    })
+}
+
+export const getAllUsers = () => {
+    return api.get('/users')
+    .then(({ data }) => {
+       return data.users
+    })
+}

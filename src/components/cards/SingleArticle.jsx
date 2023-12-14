@@ -9,7 +9,7 @@ const SingleArticle = ({ article, votes, voteError }) => {
             <div className="row-span-2 col-start-2 row-start-2 m-2">
                 <img src={article.article_img_url}/>
             </div>
-            <div className="col-span-3 text-center row-start-4 m-2">
+            <div className="col-span-3 text-left row-start-4 m-2">
                 <p>{article.body}</p>
             </div>
             <div className="row-start-5">
