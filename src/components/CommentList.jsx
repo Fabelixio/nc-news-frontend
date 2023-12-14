@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import CommentCard from "./cards/CommentCard"
 import { getArticleComments, postComment} from "../utils/api"
+import { UserContext } from "../context/UserContext"
 
 const CommentList = ({ articleId }) => {
     const [comments, setComments] = useState([])
@@ -10,6 +11,8 @@ const CommentList = ({ articleId }) => {
     const [newComment, setNewComment] = useState('')
     const [submittable, setSubmittable] = useState(true)
     const [postUpdate, setPostUpdate] = useState('')
+
+    const { user } = useContext(UserContext)
 
     useEffect(() => {
         getArticleComments(articleId)
@@ -34,7 +37,7 @@ const CommentList = ({ articleId }) => {
         if(submittable) {
             setSubmittable(false)
             setPostUpdate('Posting...')
-            postComment(articleId, newComment)
+            postComment(articleId, newComment, user.username)
             .then((postedComment) => {
                 setNewComment('')
                 setComments((currComments) => {
@@ -43,7 +46,7 @@ const CommentList = ({ articleId }) => {
                 setPostUpdate('Comment Posted')
             })
             .catch(() => {
-                setPostUpdate('Unable to post, try again later')
+                setPostUpdate('Unable to post, please try again later')
             })
             .finally(() => {
                 setPostUpdate('')

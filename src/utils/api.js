@@ -29,15 +29,20 @@ export const updateArticleVotes = (articleId, vote) => {
     return api.patch(`articles/${articleId}`, {inc_votes: vote})
 }
 
-export const postComment = (articleId, comment) => {
+export const postComment = (articleId, comment, user) => {
     const body = {
-        username: 'icellusedkars',
+        username: user,
         body: comment,
     }
-    console.log(body)
-    //hardcoded, needs to use context// 400 bad request, comment not sending - problaly local not db issue
     return api.post(`/articles/${articleId}/comments`, body)
     .then(({ data }) => {
         return data.comment
+    })
+}
+
+export const getAllUsers = () => {
+    return api.get('/users')
+    .then(({ data }) => {
+       return data.users
     })
 }
