@@ -11,7 +11,6 @@ const TopicList = () => {
     useEffect(() => {
         getAllTopics()
         .then((topicArr) => {
-            console.log(topicArr)
             setTopics(topicArr)
             setIsLoading(false)
         })
