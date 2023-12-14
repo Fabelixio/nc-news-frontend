@@ -7,6 +7,7 @@ const CommentList = ({ articleId }) => {
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
+    const [commentErr, setCommentErr] = useState(false)
     const [commentsExist, setCommentsExist] = useState(true)
     const [newComment, setNewComment] = useState('')
     const [submittable, setSubmittable] = useState(true)
@@ -46,7 +47,7 @@ const CommentList = ({ articleId }) => {
                 setPostUpdate('Comment Posted')
             })
             .catch(() => {
-                setPostUpdate('Unable to post, please try again later')
+                setCommentErr(true)
             })
             .finally(() => {
                 setPostUpdate('')
@@ -57,19 +58,23 @@ const CommentList = ({ articleId }) => {
 
     return (
         <section>
-            <h2 className="underline font-young">Comments</h2>
+            <h2 className="underline font-young m-2.5">Comments</h2>
             <h2>{postUpdate}</h2>
-            <form onSubmit={submitComment} className="border rounded-md">
+            <form onSubmit={submitComment} className="border rounded-md m-5 p-2.5">
                 <label htmlFor="commentText">Comment text:</label>
                 <textarea
                 id="commentText"
                 onChange={(event) => setNewComment(event.target.value)}
                 multiline='true'
                 required
-                placeholder='Enter comment'
+                placeholder=' Enter comment...'
                 value={newComment}>
                 </textarea>
-                <button className="border m-1">Post Comment</button>
+                <button className="rounded-full py-2 px-4 md:py-3 md:px-6 text-xs md:text-sm duration-200 font-medium
+      hover:-translate-y-0.5 active:translate-y-0
+      bg-transparent dark:bg-transparent hover:bg-teal-600 border-2 border-teal-300
+      hover:border-teal-600 dark:border-teal-600 dark:hover:border-teal-600 text-teal-600 hover:text-white dark:text-teal-600 dark:hover:bg-teal-600 dark:hover:text-white mx-1 md:mx-2 my-1 md:my-2">Post Comment</button>
+                <p>{commentErr ? <p>Failed to post comment, please try again later...</p> : <p></p>}</p>
             </form>
             <ul>
                 {comments.map((comment) => {
