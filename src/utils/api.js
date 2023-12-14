@@ -8,7 +8,6 @@ export const getAllArticles = (topic) => {
     if(topic) {
         return api.get(`/articles?topic=${topic}`)
         .then(({ data }) => {
-            console.log(data.article)
             return data.article
         })
     } else {
