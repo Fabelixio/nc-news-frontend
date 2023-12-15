@@ -4,14 +4,14 @@ const api = axios.create({
     baseURL: 'https://nc-news-project-ek11.onrender.com/api'
 })
 
-export const getAllArticles = (topic) => {
+export const getAllArticles = (topic, order, sort) => {
     if(topic) {
-        return api.get(`/articles?topic=${topic}`)
+        return api.get(`/articles?topic=${topic}&sort_by=${sort}&order=${order}`)
         .then(({ data }) => {
             return data.article
         })
     } else {
-        return api.get("/articles")
+        return api.get(`/articles?sort_by=${sort}&order=${order}`)
         .then(({ data }) => {
             return data.article
         })
