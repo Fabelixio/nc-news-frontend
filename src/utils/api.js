@@ -4,11 +4,18 @@ const api = axios.create({
     baseURL: 'https://nc-news-project-ek11.onrender.com/api'
 })
 
-export const getAllArticles = () => {
-    return api.get("/articles")
-    .then(({ data }) => {
-        return data.article
-    })
+export const getAllArticles = (topic) => {
+    if(topic) {
+        return api.get(`/articles?topic=${topic}`)
+        .then(({ data }) => {
+            return data.article
+        })
+    } else {
+        return api.get("/articles")
+        .then(({ data }) => {
+            return data.article
+        })
+    }
 }
 
 export const getSingleArticle = (articleId) => {
@@ -45,6 +52,13 @@ export const getAllUsers = () => {
     return api.get('/users')
     .then(({ data }) => {
        return data.users
+    })
+}
+
+export const getAllTopics = () => {
+    return api.get('/topics')
+    .then(({ data }) => {
+        return data.topics
     })
 }
 
