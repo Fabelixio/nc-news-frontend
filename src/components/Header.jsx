@@ -11,7 +11,7 @@ const Header = () => {
         </div>
         <div className="m-2.5">
             <img className="w-20 h-20 m-2.5" src={user.avatar_url} alt={user.username} />
-            <p className="p-2.5">{user.username}</p>
+            <p className="p-2.5">User: {user.username}</p>
         </div>
         </>
     )
