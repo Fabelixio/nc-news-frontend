@@ -9,8 +9,6 @@ const ArticleList = () => {
     const [isError, setIsError] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
     const [orderBy, setOrderBy] = useState('descending')
-    const [sortBy, setSortBy] = useState('created_at')
-    const [value, setValue] = useState('created_at')
     const [searchParams, setSearchParams] = useSearchParams()
     
     const query = new URLSearchParams(window.location.search)
@@ -48,11 +46,19 @@ const ArticleList = () => {
 
     return (
         <section>
-            <div>
-                <button onClick={() => orderManager('ASC')}>Ascending</button>
-                <button onClick={() => orderManager('DESC')}>Descending</button>
-                <label>Sort By
-                <select onChange={(event) => sortManager(event.target.value)}>
+            <div className="border rounded-md m-2.5 bg-hue-card-bg p-2.5">
+                <button className="rounded-xl py-2 px-4 md:py-3 md:px-6 text-xs md:text-sm duration-200 font-medium
+  text-blue-600 hover:-translate-y-0.5 active:translate-y-0 bg-transparent dark:bg-transparent
+  hover:bg-blue-600 border-2 border-blue-300 hover:border-blue-600 dark:border-blue-600
+  dark:hover:border-blue-600 text-blue-600 hover:text-white dark:text-blue-600
+  dark:hover:bg-blue-600 dark:hover:text-white m-2.5" onClick={() => orderManager('ASC')}>Ascending</button>
+                <button className="rounded-xl py-2 px-4 md:py-3 md:px-6 text-xs md:text-sm duration-200 font-medium
+  text-blue-600 hover:-translate-y-0.5 active:translate-y-0 bg-transparent dark:bg-transparent
+  hover:bg-blue-600 border-2 border-blue-300 hover:border-blue-600 dark:border-blue-600
+  dark:hover:border-blue-600 text-blue-600 hover:text-white dark:text-blue-600
+  dark:hover:bg-blue-600 dark:hover:text-white m-2.5" onClick={() => orderManager('DESC')}>Descending</button>
+                <label>Sort By:
+                <select className="bg-hue-card-bg border rounded-md" onChange={(event) => sortManager(event.target.value)}>
                         <option value='created_at'>Date</option>
                         <option value='comment_count'>Comments</option>
                         <option value='votes'>Votes</option>
