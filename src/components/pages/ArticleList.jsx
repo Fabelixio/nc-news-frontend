@@ -42,7 +42,7 @@ const ArticleList = () => {
         })
     }, [location, order])
     if(isLoading) return <h2 className="font-young text-center">Loading...</h2>
-    if(isError) return <Error message='No articles can be displayed' />
+    if(isError) return <Error message='This topic or search query does not exist' />
 
     return (
         <section>
