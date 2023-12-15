@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react"
 import CommentCard from "./cards/CommentCard"
 import { getArticleComments, postComment} from "../utils/api"
 import { UserContext } from "../context/UserContext"
+import Error from "./Error"
 
 const CommentList = ({ articleId }) => {
     const [comments, setComments] = useState([])
@@ -30,8 +31,7 @@ const CommentList = ({ articleId }) => {
         })
     }, [])
     if(isLoading) return <h2 className="font-young text-center">Loading Comments...</h2>
-    if(isError) return <h2 className="font-young text-center">Error: Something went wrong</h2>
-    if(!commentsExist) return <h2 className="font-young text-center m-5">This comment section is empty, why not be the first?</h2>
+    if(isError) return <Error message='Comments cannot be displayed, this could be beacuse the article requested does not exist'/>
 
     const submitComment = (event) => {
         event.preventDefault()
@@ -58,6 +58,7 @@ const CommentList = ({ articleId }) => {
 
     return (
         <section>
+            <div>{commentsExist ? <p></p> : <h2 className="font-young text-center m-5">This comment section is empty, why not be the first?</h2>}</div>
             <h2 className="underline font-young m-2.5">Comments</h2>
             <h2>{postUpdate}</h2>
             <form onSubmit={submitComment} className="border rounded-md m-5 p-2.5">

@@ -1,5 +1,5 @@
 import { UserContext } from "../../context/UserContext"
-import { useState, useEffect, useContext } from "react"
+import { useState, useContext } from "react"
 import { deleteComment } from "../../utils/api"
 const CommentCard = ({ comment }) => {
     const [deleted, setDeleted] = useState(false)

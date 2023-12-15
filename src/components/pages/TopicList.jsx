@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import TopicCard from '../cards/TopicCard'
 import { getAllTopics } from '../../utils/api'
+import Error from "../Error";
 
 
 const TopicList = () => {
@@ -21,7 +22,7 @@ const TopicList = () => {
     }, [])
 
     if(isLoading) return <h2 className="font-young text-center">Loading...</h2>
-    if(isError) return <h2 className="font-young text-center">Error: Something went wrong</h2>
+    if(isError) return <Error message='Topic does not exist' />
 
     return (
         <section>

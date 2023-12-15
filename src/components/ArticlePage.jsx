@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { getSingleArticle, updateArticleVotes } from '../utils/api'
 import SingleArticle from "./cards/SingleArticle"
+import Error from "./Error"
 
 
 const ArticlePage = ({ articleId }) => {
@@ -37,7 +38,7 @@ const ArticlePage = ({ articleId }) => {
 
   
     if(isLoading) return <h2 className="font-young text-center">Loading...</h2>
-    if(isError) return <h2 className="font-young text-center">Error: Something went wrong</h2>
+    if(isError) return <Error message='The requested article could not be displayed, this might be because no article by that ID exists' />
 
     return (
         <section>

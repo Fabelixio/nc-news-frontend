@@ -3,12 +3,12 @@ import ArticleCard from "../cards/ArticleCard"
 import { getAllArticles } from "../../utils/api"
 import { useLocation } from "react-router-dom"
 import { useSearchParams } from "react-router-dom"
+import Error from "../Error"
 
 const ArticleList = () => {
     const [articles, setArticles] = useState([])
     const [isError, setIsError] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
-    const [orderBy, setOrderBy] = useState('descending')
     const [searchParams, setSearchParams] = useSearchParams()
     
     const query = new URLSearchParams(window.location.search)
@@ -42,7 +42,7 @@ const ArticleList = () => {
         })
     }, [location, order])
     if(isLoading) return <h2 className="font-young text-center">Loading...</h2>
-    if(isError) return <h2 className="font-young text-center">Error: Something went wrong</h2>
+    if(isError) return <Error message='No articles can be displayed' />
 
     return (
         <section>
